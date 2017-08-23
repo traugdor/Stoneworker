@@ -57,7 +57,8 @@ public class Recipes{
 			for(int i = 0; i < RECIPESMAX; i++) {
 				Iterator<Recipe> itr = Bukkit.getServer().recipeIterator();
 				while (itr.hasNext()) {
-					if (itr.equals((Recipe)recipes[i])) {
+					Recipe r = itr.next();
+					if (r.equals((Recipe)recipes[i])) {
 						itr.remove();
 						//Bukkit.getLogger().info("Stoneworker removed " + recipes[i].getResult().getType().toString());
 						log.logger("Stoneworker remove " + recipes[i].getResult().getType().toString(), LOGGERLEVELS.INFO);
